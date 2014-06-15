@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Books</h2>
+<%foo=1%>
+<% @course = Course.find(params[:id])%>
+<% @course.books.each do |book| %>
+    <p> <h3>Book <%=foo%> </h3></p>
+    <p>
+      <strong>Title:</strong>
+      <%= book.title %>
+    </p>
+
+    <p>
+      <strong>Desc:</strong>
+      <%= book.desc %>
+    </p>
+
+    <%foo+=1%>
+<% end %>
+
+
+<%= link_to 'Show', @course %> |
+<%= link_to 'Back', courses_path %>
