@@ -20,6 +20,25 @@
   <%= @course.finishHour %>
 </p>
 
+<p>
+    <strong>Day:</strong>
+    <% var= '';
+       case @course.day
+         when 0
+             var = 'Monday';
+         when 1
+            var = 'Tuesday';
+         when 2
+            var = 'Wednesday';
+         when 3
+            var = 'Thursday';
+        when 4
+            var = 'Friday';
+       end
+    %>
+    <%= var %>
+</p>
+
 <%= link_to 'Book', pageBook_course_path(params[:id]) %>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
