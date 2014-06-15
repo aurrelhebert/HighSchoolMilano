@@ -2,5 +2,44 @@
 
 <%= render 'form' %>
 
+<h2>Books</h2>
+<%foo=1%>
+<% @course.books.each do |book| %>
+    <p> <h3>Livre <%=foo%> </h3></p>
+    <p>
+      <strong>Title:</strong>
+      <%= book.title %>
+    </p>
+
+    <p>
+      <strong>Desc:</strong>
+      <%= book.desc %>
+
+      <%= link_to 'Destroy Book', [book.course, book],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+
+    </p>
+
+    <%foo+=1%>
+<% end %>
+
+<h2>Add a Book:</h2>
+<%= form_for([@course, @course.books.build]) do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :desc %><br>
+      <%= f.text_area :desc %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
 <%= link_to 'Show', @course %> |
 <%= link_to 'Back', courses_path %>
+
+

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
   resources :teachers
 
-  resources :courses
+  resources :courses do
+    resources :books
+  end
 
   get 'welcome/index'
 
