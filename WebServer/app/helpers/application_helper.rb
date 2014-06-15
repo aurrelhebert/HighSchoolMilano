@@ -7,4 +7,7 @@ module ApplicationHelper
       "#{base_titre} | #{@titre}"
     end
   end
+  def description
+    @description
+  end
 end

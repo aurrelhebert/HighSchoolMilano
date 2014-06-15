@@ -6,4 +6,5 @@
       @titre = "Welcome !"
     end
 
+
 end

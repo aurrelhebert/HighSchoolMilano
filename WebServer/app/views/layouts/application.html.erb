@@ -5,67 +5,68 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">73 HighSchool BEH</a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%=link_to 'All courses', courses_path%></li>
-              <li><a href="#">Years</a></li>
-              <li><a href="#">Formations</a></li>
-              <li><a href="#">All Classes</a></li>
-            </ul>
-          </li>
-          <li><%=link_to 'Teachers',teachers_path%></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Structures <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">All structures</a></li>
-              <li><a href="#">Types of structures</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Events</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Structures <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">All events</a></li>
-              <li><a href="#">Coming soon</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Parent's associations</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information about high school<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Pratical information</a></li>
-              <li><a href="#">Student support</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Join us</a></li>
-              <li><a href="#">Administrative</a></li>
-            </ul>
-          </li>
-
-        </ul>
-
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
 </head>
 
 <body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">73 HighSchool BEH</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%=link_to 'All courses', courses_path%></li>
+            <li><a href="#">Years</a></li>
+            <li><a href="#">Formations</a></li>
+            <li><a href="#">All Classes</a></li>
+          </ul>
+        </li>
+        <li><%=link_to 'Teachers',teachers_path%></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Structures <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">All structures</a></li>
+            <li><a href="#">Types of structures</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Events</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Structures <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">All events</a></li>
+            <li><a href="#">Coming soon</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Parent's associations</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information about high school<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Pratical information</a></li>
+            <li><a href="#">Student support</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Join us</a></li>
+            <li><a href="#">Administrative</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <%= yield %>
 
