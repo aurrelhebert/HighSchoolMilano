@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @course = Course.find(params[:course_id])
     @book = @course.books.find(params[:id])
     @book.destroy
-    redirect_to course_path
+    redirect_to edit_course_path(@course)
   end
 
   private
