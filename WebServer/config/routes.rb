@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get 'pageBook'
       get 'timetable'
+      get 'program'
     end
   end
   resources :formations do

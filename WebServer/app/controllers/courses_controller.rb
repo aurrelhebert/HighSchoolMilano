@@ -26,6 +26,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    @titre = "Edit "+@course.title
   end
 
   # GET /courses/1/pbook
@@ -37,6 +38,7 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+    @titre = "Creating a course"
     @formation = Formation.find(params[:formation_id])
     @course = @formation.courses.create(course_params)
 
@@ -83,6 +85,6 @@ class CoursesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def course_params
-    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day)
+    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day, :program)
   end
 end
