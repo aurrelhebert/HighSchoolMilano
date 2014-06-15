@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
     @book = @course.books.create(book_params)
-    redirect_to course_path(@course)
+    redirect_to edit_course_path(@course)
   end
 
   def show
