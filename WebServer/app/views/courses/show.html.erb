@@ -20,5 +20,22 @@
   <%= @course.finishHour %>
 </p>
 
+<h2>Books</h2>
+<%foo=1%>
+<% @course.books.each do |book| %>
+    <p> <h3>Livre <%=foo%> </h3></p>
+    <p>
+      <strong>Title:</strong>
+      <%= book.title %>
+    </p>
+
+    <p>
+      <strong>Desc:</strong>
+      <%= book.desc %>
+    </p>
+
+    <%foo+=1%>
+<% end %>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

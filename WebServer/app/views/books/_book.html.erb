@@ -1,0 +1,15 @@
+<p>
+  <strong>Title:</strong>
+  <%= book.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= book.desc %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Book', [book.course, book],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
