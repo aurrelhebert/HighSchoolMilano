@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :books
     member do
       get 'pageBook'
+      get 'timetable'
     end
   end
   resources :formations do

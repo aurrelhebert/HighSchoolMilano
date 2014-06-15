@@ -32,6 +32,7 @@ class CoursesController < ApplicationController
   def pageBook_course_pathbook
     @course = Course.find(params[:id])
   end
+  # GET /courses/1/timetable
 
   # POST /courses
   # POST /courses.json
