@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="panel panel-success col-lg-offset-2 col-lg-7">
+      <div class="panel-heading">
+        <h3 class="panel-title">Guided tour</h3>
+      </div>
+      <div class="panel-body">
+       <p> <%=link_to 'Start a tour of all the courses of the '+@formation.name+ ' formation', @formation.courses.first %></p>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-info col-lg-offset-2 col-lg-7">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%='Courses of the '+@formation.name+ ' formation'%></h3>
+      </div>
+      <div class="panel-body">
+        <% @formation.courses.each do |course| %>
+            <p>
+              <%= link_to course.title,course %>
+              <strong> : </strong>
+              <%= course.desc %>
+            </p>
+        <% end %>
+      </div>
+    </div>
+</div>
+<h2>Add a course:</h2>
+<%= form_for([@formation, @formation.courses.build]) do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :desc %><br>
+      <%= f.text_area :desc %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+<%= link_to 'Edit', edit_formation_path(@formation) %> |
+<%= link_to 'Back', formations_path %>
