@@ -8,6 +8,10 @@ module ApplicationHelper
     end
   end
   def description
-    @description
+    if @description.nil?
+      nil
+    else
+      @description
+    end
   end
 end

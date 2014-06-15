@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :formations
+
   resources :teachers
 
   resources :courses do
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
     member do
       get 'pageBook'
     end
+  end
+  resources :formations do
+    resources :courses
   end
 
   get 'welcome/index'

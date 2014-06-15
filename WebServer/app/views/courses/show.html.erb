@@ -1,24 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="col-lg-2">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active"><%=@course.title %></li>
+    <li><%= link_to'Description' ,@course %></li>
+    <li><%=link_to'Timetable' ,'#' %></li>
+    <li><%=link_to'Books' ,'#' %></li>
+    <li><%=link_to'Programs' ,'#' %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @course.desc %>
-</p>
-
-<p>
-  <strong>Startinghour:</strong>
-  <%= @course.startingHour %>
-</p>
-
-<p>
-  <strong>Finishhour:</strong>
-  <%= @course.finishHour %>
-</p>
+<div class="panel panel-info col-lg-7">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%='Description'%></h3>
+  </div>
+  <div class="panel-body">
+    <p><%= @course.desc %></p>
+  </div>
 
 <%= link_to 'Book', pageBook_course_path(params[:id]) %>
 <%= link_to 'Edit', edit_course_path(@course) %> |

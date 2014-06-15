@@ -19,7 +19,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">73 HighSchool BEH</a>
+      <%= link_to '73 HighSchool BEH', welcome_index_path, class:"navbar-brand"%>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,7 +30,7 @@
           <ul class="dropdown-menu">
             <li><%=link_to 'All courses', courses_path%></li>
             <li><a href="#">Years</a></li>
-            <li><a href="#">Formations</a></li>
+            <li><%=link_to 'Formations', formations_path%></li>
             <li><a href="#">All Classes</a></li>
           </ul>
         </li>
@@ -42,9 +42,8 @@
             <li><a href="#">Types of structures</a></li>
           </ul>
         </li>
-        <li><a href="#">Events</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Structures <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">All events</a></li>
             <li><a href="#">Coming soon</a></li>
@@ -67,6 +66,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div class="container-fluid">
+  <div class="center jumbotron">
+    <h1><%=@titre%></h1>
+    <h2><%=@description%></h2>
+    </div>
+  </div>
 
 <%= yield %>
 
