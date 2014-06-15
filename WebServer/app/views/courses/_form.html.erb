@@ -1,7 +1,7 @@
 <%= form_for(@course) do |f| %>
   <% if @course.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+      <h2><%= pluralize(@course.errors.count, 'error') %> prohibited this course from being saved:</h2>
 
       <ul>
       <% @course.errors.full_messages.each do |message| %>
@@ -27,6 +27,9 @@
     <%= f.label :finishHour %><br>
     <%= f.number_field :finishHour %>
   </div>
+    <div class=field">
+    <%= f.label :day%>
+    <%= f.select(:day, options_for_select([['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4]])) %>
   <div class="actions">
     <%= f.submit %>
   </div>
