@@ -1,6 +1,5 @@
 class CreateTeachers < ActiveRecord::Migration
   def change
-    drop_table :teachers
     create_table :teachers do |t|
       t.string :firstName
       t.string :name
