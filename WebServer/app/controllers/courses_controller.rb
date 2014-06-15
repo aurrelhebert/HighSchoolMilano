@@ -21,6 +21,11 @@ class CoursesController < ApplicationController
   def edit
   end
 
+  # GET /courses/1/pbook
+  def pageBook_course_pathbook
+    @course = Course.find(params[:id])
+  end
+
   # POST /courses
   # POST /courses.json
   def create
