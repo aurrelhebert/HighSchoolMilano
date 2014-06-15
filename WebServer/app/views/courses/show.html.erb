@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @course.desc %>
+</p>
+
+<p>
+  <strong>Startinghour:</strong>
+  <%= @course.startingHour %>
+</p>
+
+<p>
+  <strong>Finishhour:</strong>
+  <%= @course.finishHour %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
