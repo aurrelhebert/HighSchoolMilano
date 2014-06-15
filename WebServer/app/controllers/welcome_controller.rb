@@ -1,4 +1,3 @@
 class WelcomeController < ApplicationController
-  def index
-  end
+    @titre = 'Welcome !'
 end
