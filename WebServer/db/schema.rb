@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20140616200033) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "day"
+    t.integer  "year"
+    t.integer  "formation_id"
+  end
+
+  add_index "courses", ["formation_id"], name: "index_courses_on_formation_id"
+
+  create_table "formations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "teachers", force: true do |t|
