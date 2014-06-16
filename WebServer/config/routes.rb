@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :formations
-
   resources :teachers
 
   resources :courses do
     resources :books
+    resources :timetables
     member do
       get 'pageBook'
-      get 'timetable'
-      get 'program'
+      get 'pageTimetable'
     end
-  end
-  resources :formations do
-    resources :courses
   end
 
   get 'welcome/index'

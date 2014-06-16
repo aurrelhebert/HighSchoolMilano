@@ -2,6 +2,53 @@
 
 <%= render 'form' %>
 
+<h2>Time and days of the lesson</h2>
+<% @course.timetables.each do |timetable| %>
+    <p>
+      <strong>Hour:</strong>
+      <%= timetable.hour %>
+    </p>
+
+    <p>
+      <strong>Day:</strong>
+      <% var= '';
+         case timetable.day
+           when 0
+             var = 'Monday';
+           when 1
+             var = 'Tuesday';
+           when 2
+             var = 'Wednesday';
+           when 3
+             var = 'Thursday';
+           when 4
+             var = 'Friday';
+         end
+      %>
+      <%= var %>
+    </p>
+
+    <%= link_to 'Destroy Lesson', [timetable.course, timetable],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+
+<% end %>
+
+<h2>Add a time for a class:</h2>
+<%= form_for([@course, @course.timetables.build]) do |f| %>
+    <p>
+      <%= f.label :hour %><br>
+      <%= f.text_field :hour %>
+    </p>
+    <p>
+      <%= f.label :day%>
+      <%= f.select(:day, options_for_select([['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4]])) %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
 <h2>Books</h2>
 <%foo=1%>
 <% @course.books.each do |book| %>

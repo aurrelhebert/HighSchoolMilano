@@ -5,18 +5,11 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-    @titre = "All courses"
-    @description = "Here, you will find the list of all the Courses available in our High school :"
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @titre = @course.title
-    if @course.year != nil
-      @titre += '('+@course.year+')'
-    end
-
   end
 
   # GET /courses/new
@@ -26,26 +19,22 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
-    @titre = "Edit "+@course.title
   end
 
   # GET /courses/1/pbook
   def pageBook_course_pathbook
     @course = Course.find(params[:id])
   end
-  # GET /courses/1/timetable
 
   # POST /courses
   # POST /courses.json
   def create
-    @titre = "Creating a course"
-    @formation = Formation.find(params[:formation_id])
-    @course = @formation.courses.create(course_params)
+    @course = Course.new(course_params)
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @formation, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @formation }
+        format.html { redirect_to edit_course_path(@course), notice: 'Course was successfully created.' }
+        format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
         format.json { render json: @course.errors, status: :unprocessable_entity }
@@ -85,6 +74,6 @@ class CoursesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def course_params
-    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day, :program)
+    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day)
   end
 end
