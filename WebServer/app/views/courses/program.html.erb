@@ -5,7 +5,7 @@
     <li class="active"><%=@course.title %></li>
     <li><%= link_to'Description' ,@course %></li>
     <li><%=link_to'Timetable' ,pageTimetable_course_path(params[:id]) %></li>
-    <li><%=link_to'Books' ,'#' %></li>
+    <li><%=link_to'Books' ,pageBook_course_path(params[:id]) %></li>
     <li><%=link_to'Programs' , program_course_path(params[:id]) %></li>
     <li class="active"><%="Page related to "+@course.title %></li>
     <li><%= link_to'Teacher teaching '+@course.title ,'#' %></li>
@@ -20,7 +20,7 @@
     <h3 class="panel-title"><%='Program'%></h3>
   </div>
   <div class="panel-body">
-    <p><#%= @course.program %></p>
+    <p><%= @course.program %></p>
   </div>
 
   <%= link_to 'Book', pageBook_course_path(params[:id]) %>

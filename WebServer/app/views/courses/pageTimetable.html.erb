@@ -17,6 +17,7 @@
 <div class="panel panel-info col-lg-7">
   <div class="panel-heading">
     <h3 class="panel-title"><%='Timetable'%></h3>
+  </div>
 
 <% @course.timetables.each do |timetable| %>
     <p>
@@ -49,4 +50,4 @@
 <%= link_to 'Book', pageBook_course_path(params[:id]) %>
 <p></p>
 <%= link_to 'Back', courses_path %>
-
+</div>

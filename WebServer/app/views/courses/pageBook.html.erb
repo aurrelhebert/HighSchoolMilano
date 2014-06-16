@@ -17,7 +17,9 @@
 <div class="panel panel-info col-lg-7">
   <div class="panel-heading">
     <h3 class="panel-title"><%='Books'%></h3>
-
+  </div>
+    <div class="panel-body">
+    </div>
 <%foo=1%>
 <% @course.books.each do |book| %>
     <p> <h3>Book <%=foo%> </h3></p>
@@ -39,3 +41,4 @@
 <%= link_to 'Timetable', pageTimetable_course_path(params[:id]) %>
 <p></p>
 <%= link_to 'Back', courses_path %>
+</div>

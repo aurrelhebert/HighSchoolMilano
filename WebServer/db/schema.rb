@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616200033) do
+ActiveRecord::Schema.define(version: 20140616212653) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140616200033) do
     t.integer  "day"
     t.integer  "year"
     t.integer  "formation_id"
+    t.text     "program"
   end
 
   add_index "courses", ["formation_id"], name: "index_courses_on_formation_id"

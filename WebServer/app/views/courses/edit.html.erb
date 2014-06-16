@@ -38,7 +38,7 @@
 <%= form_for([@course, @course.timetables.build]) do |f| %>
     <p>
       <%= f.label :hour %><br>
-      <%= f.text_field :hour %>
+      <%= f.number_field :hour %>
     </p>
     <p>
       <%= f.label :day%>
