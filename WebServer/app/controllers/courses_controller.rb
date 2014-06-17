@@ -29,7 +29,11 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1/pbook
-  def pageBook_course_pathbook
+  def pageBook
+    @course = Course.find(params[:id])
+  end
+
+  def pageTimetable
     @course = Course.find(params[:id])
   end
   # GET /courses/1/timetable
