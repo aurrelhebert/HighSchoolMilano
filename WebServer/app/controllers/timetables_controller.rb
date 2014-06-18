@@ -2,7 +2,15 @@ class TimetablesController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
     @timetable = @course.timetables.create(timetable_params)
-    redirect_to edit_course_path(@course)
+    @course.timetables.to_a.sort_by! { |m| m.day}
+
+    respond_to do |format|
+      if @course.save
+        format.html { redirect_to edit_course_path(@course), notice: 'Timetable was successfully created.' }
+      else
+        format.html { redirect_to edit_course_path(@course), notice: 'Erreur' }
+      end
+    end
   end
 
   def destroy

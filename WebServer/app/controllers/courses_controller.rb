@@ -45,15 +45,11 @@ class CoursesController < ApplicationController
     @course = @formation.courses.create(course_params)
     @course = Course.new(course_params)
 
-    respond_to do |format|
       if @course.save
-        format.html { redirect_to edit_course_path(@course), notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
+        redirect_to edit_course_path(@course)
       else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   # PATCH/PUT /courses/1

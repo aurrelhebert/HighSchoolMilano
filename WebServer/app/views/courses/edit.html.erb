@@ -3,11 +3,9 @@
 <%= render 'form' %>
 
 <h2>Time and days of the lesson</h2>
-<% @course.timetables.each do |timetable| %>
-    <p>
-      <strong>Hour:</strong>
-      <%= timetable.hour %>
-    </p>
+
+<% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
+<% @list.each do |timetable| %>
 
     <p>
       <strong>Day:</strong>
@@ -28,6 +26,16 @@
       <%= var %>
     </p>
 
+    <p>
+      <strong>Hour:</strong>
+      <%= timetable.hour %>
+    </p>
+
+    <p>
+      <strong>Room:</strong>
+      <%= timetable.room %>
+    </p>
+
     <%= link_to 'Destroy Lesson', [timetable.course, timetable],
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
@@ -44,7 +52,7 @@
 
     <p>
       <%= f.label :hour %><br>
-      <%= f.number_field :hour %>
+      <%= f.number_field :hour, :min => 8, :max => 17, :value => 8%>
     </p>
 
     <p>

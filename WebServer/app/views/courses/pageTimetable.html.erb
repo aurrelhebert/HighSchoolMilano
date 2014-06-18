@@ -18,11 +18,8 @@
     <h3 class="panel-title"><%='Timetable'%></h3>
   </div>
 
-<% @course.timetables.each do |timetable| %>
-    <p>
-      <strong>Hour:</strong>
-      <%= timetable.hour %>
-    </p>
+  <% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
+  <% @list.each do |timetable| %>
 
     <p>
       <strong>Day:</strong>
@@ -41,11 +38,15 @@
          end
       %>
       <%= var %>
+      <strong>Hour: </strong>
+      <%= timetable.hour %>
+      <strong>Room: </strong>
+      <%= timetable.room %>
     </p>
 <% end %>
 
 
-  <%= table_for(@course.timetables, :html => {:class => 'center'})  do |t| %>
+  <%= table_for(@list, :html => {:class => 'center'})  do |t| %>
       <%= t.head do %>
           <%= t.r do %>
               <th class="titre">
