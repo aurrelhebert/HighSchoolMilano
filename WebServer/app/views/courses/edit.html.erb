@@ -36,13 +36,20 @@
 
 <h2>Add a Lesson:</h2>
 <%= form_for([@course, @course.timetables.build]) do |f| %>
+
+    <p>
+    <%= f.label :day%>
+    <%= f.select(:day, options_for_select([['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4]])) %>
+    </p>
+
     <p>
       <%= f.label :hour %><br>
       <%= f.number_field :hour %>
     </p>
+
     <p>
-      <%= f.label :day%>
-      <%= f.select(:day, options_for_select([['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4]])) %>
+      <%= f.label :room %><br>
+      <%= f.text_field :room %>
     </p>
     <p>
       <%= f.submit %>

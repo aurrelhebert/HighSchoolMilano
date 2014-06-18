@@ -14,3 +14,52 @@
  *= require_self
  *= require bootstrap.css
  */
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+table
+{
+    border:1px solid black;
+    border-spacing:5px;
+    width: 90%;
+
+}
+
+table td
+{
+    border:1px solid black;
+    text-align:center;
+    padding:25px;
+    overflow: hidden;
+}
+
+table th {
+    border:1px solid black;
+    height: 50px;
+    text-align:left;
+    background-color: lightblue;
+    color: white;
+    overflow: hidden;
+}
+
+table th.titre {
+    border:1px solid black;
+    height: 50px;
+    text-align:center;
+    background-color: lightblue;
+    color: white;
+    overflow: hidden;
+}
+
+table td.cour {
+    border:1px solid black;
+    text-align:center;
+    padding:25px;
+    overflow: hidden;
+    background-color: lightblue;
+}
+
+
