@@ -32,7 +32,7 @@ table td
 {
     border:1px solid black;
     text-align:center;
-    padding:25px;
+    padding:20px;
     overflow: hidden;
 }
 
@@ -57,7 +57,7 @@ table th.titre {
 table td.cour {
     border:1px solid black;
     text-align:center;
-    padding:25px;
+    padding:15px;
     overflow: hidden;
     background-color: lightblue;
 }
