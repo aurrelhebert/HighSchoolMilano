@@ -6,7 +6,7 @@ class TimetablesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to edit_course_path(@course), notice: 'Timetable was successfully created.' }
+        format.html { redirect_to edit_course_path(@course)+'#timetable', notice: 'Timetable was successfully created.'}
       else
         format.html { redirect_to edit_course_path(@course), notice: 'Erreur' }
       end
@@ -17,7 +17,7 @@ class TimetablesController < ApplicationController
     @course = Course.find(params[:course_id])
     @timetable = @course.timetables.find(params[:id])
     @timetable.destroy
-    redirect_to edit_course_path(@course)
+    redirect_to edit_course_path(@course)+'#timetable'
   end
 
   private

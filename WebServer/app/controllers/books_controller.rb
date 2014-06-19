@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   def create
     @course = Course.find(params[:course_id])
     @book = @course.books.create(book_params)
-    redirect_to edit_course_path(@course)
+    redirect_to edit_course_path(@course)+'#book'
   end
 
   def show
@@ -13,7 +13,7 @@ class BooksController < ApplicationController
     @course = Course.find(params[:course_id])
     @book = @course.books.find(params[:id])
     @book.destroy
-    redirect_to edit_course_path(@course)
+    redirect_to edit_course_path(@course)+'#book'
   end
 
   private

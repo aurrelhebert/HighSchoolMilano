@@ -1,8 +1,9 @@
+
 <h1>Editing course</h1>
 
 <%= render 'form' %>
 
-<h2>Time and days of the lesson</h2>
+<h2><a title="Timetable" name="timetable"></a>Time and days of the lesson</h2>
 
 <% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
 <% @list.each do |timetable| %>
@@ -36,9 +37,11 @@
       <%= timetable.room %>
     </p>
 
+    <p>
     <%= link_to 'Destroy Lesson', [timetable.course, timetable],
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
+    </p>
 
 <% end %>
 
@@ -63,11 +66,12 @@
       <%= f.submit %>
     </p>
 <% end %>
-
-<h2>Books</h2>
+<p>
+<h2><a title="Books" name="book"></a>Books</h2>
+</p>
 <%foo=1%>
 <% @course.books.each do |book| %>
-    <p> <h3>Book <%=foo%> </h3></p>
+    <h3>Book <%=foo%> </h3>
     <p>
       <strong>Title:</strong>
       <%= book.title %>
