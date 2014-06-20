@@ -21,6 +21,9 @@
     <p><%= @course.desc %></p>
   </div>
 
+
+  <%= image_tag(@course.avatar_url, :alt => @course.title, :align=> "middle", :class => "displayed")%>
+
   <p>
     <!-- <strong>Day:</strong>
 <% var= '';

@@ -62,4 +62,10 @@ table td.cour {
     background-color: lightblue;
 }
 
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 

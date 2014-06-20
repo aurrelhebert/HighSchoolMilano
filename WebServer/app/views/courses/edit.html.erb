@@ -3,6 +3,19 @@
 
 <%= render 'form' %>
 
+<%= form_for @course, :html => {:multipart => true} do |f| %>
+    <p>
+      <label>My Avatar</label>
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    </p>
+
+    <p>
+      <%= f.submit(:avatar) %>
+    </p>
+
+<% end %>
+
 <h2><a title="Timetable" name="timetable"></a>Time and days of the lesson</h2>
 
 <% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
