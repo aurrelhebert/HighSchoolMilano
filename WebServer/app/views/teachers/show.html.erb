@@ -27,7 +27,7 @@
 
 <%= image_tag(@teacher.avatar_url, :alt => @teacher.name, :align=> "middle", :class => "avatar")%>
 <p>
-  <%= link_to "Download Resume", @teacher.cv_url, :target => "_blank" %>
+  <%= link_to("Download Resume", @teacher.cv_url, :target => "_blank") if @teacher.cv? %>
 </p>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
