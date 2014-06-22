@@ -12,7 +12,18 @@
     <p>
       <%= f.submit(:avatar) %>
     </p>
+<% end %>
 
+<%= form_for @teacher, :html => {:multipart => true} do |f| %>
+    <p>
+      <label>My CV</label>
+      <%= f.file_field :cv %>
+      <%= f.hidden_field :cv_cache %>
+    </p>
+
+    <p>
+      <%= f.submit(:cv) %>
+    </p>
 <% end %>
 <%= link_to 'Show', @teacher %> |
 <%= link_to 'Back', teachers_path %>

@@ -26,6 +26,9 @@
 </p>
 
 <%= image_tag(@teacher.avatar_url, :alt => @teacher.name, :align=> "middle", :class => "avatar")%>
+<p>
+  <%= link_to "Download Resume", @teacher.cv_url, :target => "_blank" %>
+</p>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>
