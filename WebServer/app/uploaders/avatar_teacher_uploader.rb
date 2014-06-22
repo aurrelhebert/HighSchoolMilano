@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-class Avatar_Uploader < CarrierWave::Uploader::Base
+class AvatarTeacherUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-
+  # include CarrierWave::MiniMagick
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -22,9 +22,8 @@ class Avatar_Uploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "/images/" + [version_name, "noimg.jpg"].compact.join('_')
+    "/images/" + [version_name, "nophoto.jpg"].compact.join('_')
   end
-
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -57,6 +56,5 @@ class Avatar_Uploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 
 end

@@ -25,5 +25,7 @@
   <%= @teacher.email %>
 </p>
 
+<%= image_tag(@teacher.avatar_url, :alt => @teacher.name, :align=> "middle", :class => "avatar")%>
+
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>
