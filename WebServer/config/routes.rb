@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :teachers
+  resources :teachers do
+    member do
+      get 'pageTimetable'
+      get 'cv'
+    end
+  end
+
   resources :formations
 
   resources :courses do

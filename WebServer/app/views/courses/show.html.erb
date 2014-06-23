@@ -19,13 +19,10 @@
   </div>
   <div class="panel-body">
     <p><%= @course.desc %></p>
-  </div>
+    <%= image_tag(@course.avatar_url, :alt => @course.title, :align=> "middle", :class => "avatar")%>
 
-
-  <%= image_tag(@course.avatar_url, :alt => @course.title, :align=> "middle", :class => "avatar")%>
-
-  <p>
-    <!-- <strong>Day:</strong>
+    <p>
+      <!-- <strong>Day:</strong>
 <% var= '';
    case @course.day
      when 0
@@ -39,9 +36,14 @@
      when 4
        var = 'Friday';
    end
-  %>
+    %>
 <%= var %>
+
+
+
 </p>-->
+
+  </div>
 
     <%= link_to 'Book', pageBook_course_path(params[:id]) %>
     <%= link_to 'Edit this page (only for teachers)', edit_course_path(@course) %> |

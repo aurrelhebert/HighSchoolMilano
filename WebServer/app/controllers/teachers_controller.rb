@@ -51,6 +51,14 @@ class TeachersController < ApplicationController
     end
   end
 
+  def pageTimetable
+    @teacher = Teacher.find(params[:id])
+  end
+
+  def cv
+    @teacher = Teacher.find(params[:id])
+  end
+
   # DELETE /teachers/1
   # DELETE /teachers/1.json
   def destroy

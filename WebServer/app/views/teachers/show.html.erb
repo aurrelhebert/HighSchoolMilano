@@ -1,4 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="col-lg-2">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active"><%=@teacher.firstName + @teacher.name %></li>
+    <li><%= link_to'Contact and desk' ,@teacher %></li>
+    <li><%=link_to'Timetable' , pageTimetable_teacher_path(params[:id]) %></li>
+    <li><%=link_to'CV' , cv_teacher_path(params[:id]) %></li>
+    <li class="active"><%="Page related to "+@teacher.name %></li>
+    <li><%=link_to' Courses '+ @teacher.firstName + @teacher.name + ' is teaching','#' %></li>
+    <li><%=link_to'Events Organized by '+@teacher.firstName + @teacher.name ,'#' %></li>
+  </ul>
+</div>
+
+<div class="panel panel-info col-lg-7">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%='Information about ' +@teacher.firstName + @teacher.name %></h3>
+  </div>
+  <div class="panel-body">
+
+  <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Firstname:</strong>
@@ -30,5 +48,8 @@
   <%= link_to("Download Resume", @teacher.cv_url, :target => "_blank") if @teacher.cv? %>
 </p>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+  </div>
+
+  <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>
+</div>
