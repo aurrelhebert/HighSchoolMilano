@@ -4,6 +4,7 @@ class Course < ActiveRecord::Base
   has_many :books, dependent: :destroy
   has_many :timetables, dependent: :destroy
   belongs_to :formation
+  has_and_belongs_to_many :teachers
   validates :title, presence: true
   mount_uploader :avatar, Avatar_Uploader
 

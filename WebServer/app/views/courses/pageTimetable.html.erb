@@ -18,7 +18,7 @@
     <h3 class="panel-title"><%='Timetable'%></h3>
   </div>
 
-  <% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
+
   <% @list.each do |timetable| %>
 
     <p>

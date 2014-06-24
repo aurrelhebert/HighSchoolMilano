@@ -21,11 +21,14 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @course.teachers.build()
   end
 
   # GET /courses/1/edit
   def edit
     @titre = "Edit "+@course.title
+    @teachers = @course.teachers
+    @list_teacher = Teacher.all
   end
 
   # GET /courses/1/pbook
@@ -35,6 +38,7 @@ class CoursesController < ApplicationController
 
   def pageTimetable
     @course = Course.find(params[:id])
+    @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}
   end
   # GET /courses/1/timetable
   # POST /courses

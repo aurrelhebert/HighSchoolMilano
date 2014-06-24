@@ -22,6 +22,23 @@
   </p>
 
 
+        Liste :
+        <% @list_t = []%>
+
+        <% @list_teacher.each do |teacher| %>
+            <div>
+              <%= check_box_tag "product[category_ids][]", teacher.id, @course.teachers<<(teacher) %>
+              <%= teacher.name %>
+              <%= teacher.firstName %>
+            </div>
+        <%end%>
+    <% @course.teachers.each do |teacher| %>
+        <p>
+        <%= teacher.name %>
+        <%= teacher.firstName %>
+        </p>
+   <%end %>
+
   </p>
   <p class="actions">
     <%= f.submit %>
