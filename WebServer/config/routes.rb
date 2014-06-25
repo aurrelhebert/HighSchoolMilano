@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
+
+
   resources :formations
 
   resources :courses do
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
       get 'pageBook'
       get 'pageTimetable'
       get 'program'
+      get 'display'
     end
   end
   resources :formations do

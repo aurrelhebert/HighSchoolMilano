@@ -80,6 +80,22 @@ class CoursesController < ApplicationController
     end
   end
 
+
+  def display
+    @course = Course.find(params[:id])
+    @list = params[:act_checkbox]
+    puts @list
+    @course.teachers.clear
+    @list.each do |_id,v|
+      @teacher = Teacher.find(_id)
+       if v == "1"
+          @course.teachers<<@teacher
+       end
+    end
+    puts @course.teachers
+    redirect_to course_path(@course)
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_course
@@ -88,6 +104,6 @@ class CoursesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def course_params
-    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day, :program, :avatar)
+    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day, :program, :avatar, :teachers)
   end
 end

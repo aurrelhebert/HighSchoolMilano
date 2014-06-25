@@ -118,9 +118,21 @@
     </p>
 <% end %>
 
+    <p>
+      Titre
 
+<form action="display" method="get">
+  <% @list_teacher.each do |teacher| %>
+      <div>
+        <%= check_box(:act_checkbox, teacher.id) %>
+        <%= teacher.name %>
+        <%= teacher.firstName %>
+      </div>
+  <%end%>
+  <input type="submit" value="Submit">
+</form>
 
-
+    </p>
 
 <%= link_to 'Show', @course %> |
 <%= link_to 'Back', courses_path %>
