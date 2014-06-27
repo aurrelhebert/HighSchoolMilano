@@ -124,7 +124,7 @@
 <form action="display" method="get">
   <% @list_teacher.each do |teacher| %>
       <div>
-        <%= check_box(:act_checkbox, teacher.id) %>
+        <%= check_box(:act_checkbox, teacher.id, {checked:  @course.teachers.exists?(teacher)}) %>
         <%= teacher.name %>
         <%= teacher.firstName %>
       </div>
