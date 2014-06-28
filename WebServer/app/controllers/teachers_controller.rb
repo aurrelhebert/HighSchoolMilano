@@ -19,6 +19,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1/edit
   def edit
+    @list_courses = Course.all
   end
 
   # POST /teachers
@@ -55,6 +56,10 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
   end
 
+  def courses
+    @teacher = Teacher.find(params[:id])
+  end
+
   def cv
     @teacher = Teacher.find(params[:id])
   end
@@ -67,6 +72,19 @@ class TeachersController < ApplicationController
       format.html { redirect_to teachers_url, notice: 'Teacher was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def display
+    @teacher = Teacher.find(params[:id])
+    @list = params[:act_checkbox]
+    @teacher.courses.clear
+    @list.each do |_id,v|
+      if v == "1"
+        @course = Course.find(_id)
+        @teacher.courses<<@course
+      end
+    end
+    redirect_to teacher_path(@teacher)
   end
 
   private

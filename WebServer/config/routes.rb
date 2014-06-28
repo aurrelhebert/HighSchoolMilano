@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     member do
       get 'pageTimetable'
       get 'cv'
+      get 'display'
+      get 'courses'
     end
   end
 

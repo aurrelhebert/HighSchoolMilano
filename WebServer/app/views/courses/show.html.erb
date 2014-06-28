@@ -45,8 +45,7 @@
     <h3> Teachers:</h3>
       <% @course.teachers.each do |teacher| %>
         <p>
-          <%= teacher.name %>
-          <%= teacher.firstName %>
+          <%= link_to teacher.name + teacher.firstName,teacher %>
         </p>
     <%end %>
 

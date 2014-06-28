@@ -1,0 +1,14 @@
+<div class="panel panel-info col-lg-7">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%='Courses '+ @teacher.firstName + @teacher.name + ' is teaching' %></h3>
+  </div>
+  <div class="panel-body">
+<h3> Courses:</h3>
+<% @teacher.courses.each do |course| %>
+    <p>
+      <%= link_to course.title,course %>
+    </p>
+<%end %>
+    <%= link_to "Back",@teacher%>
+  </div>
+</div>

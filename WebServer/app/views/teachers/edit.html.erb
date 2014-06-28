@@ -25,5 +25,15 @@
       <%= f.submit(:cv) %>
     </p>
 <% end %>
+
+<form action="display" method="get">
+  <% @list_courses.each do |course| %>
+      <div>
+        <%= check_box(:act_checkbox, course.id, {checked:  @teacher.courses.exists?(course)}) %>
+        <%= course.title %>
+      </div>
+  <%end%>
+  <input type="submit" value="Submit">
+</form>
 <%= link_to 'Show', @teacher %> |
 <%= link_to 'Back', teachers_path %>

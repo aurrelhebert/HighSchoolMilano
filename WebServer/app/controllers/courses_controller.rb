@@ -84,15 +84,13 @@ class CoursesController < ApplicationController
   def display
     @course = Course.find(params[:id])
     @list = params[:act_checkbox]
-    puts @list
     @course.teachers.clear
     @list.each do |_id,v|
-      @teacher = Teacher.find(_id)
        if v == "1"
-          @course.teachers<<@teacher
+         @teacher = Teacher.find(_id)
+         @course.teachers<<@teacher
        end
     end
-    puts @course.teachers
     redirect_to course_path(@course)
   end
 
