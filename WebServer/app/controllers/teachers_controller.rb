@@ -54,7 +54,15 @@ class TeachersController < ApplicationController
 
   def pageTimetable
     @teacher = Teacher.find(params[:id])
-  end
+    @list = []
+    @teacher.courses.each do |course|
+      course.timetables.each do |timetable|
+        timetable.course_title = course.title
+        @list << timetable
+        end
+      end
+    @list_timetable = @list.to_a.sort_by {|m| [m.day, m.hour]}
+    end
 
   def courses
     @teacher = Teacher.find(params[:id])

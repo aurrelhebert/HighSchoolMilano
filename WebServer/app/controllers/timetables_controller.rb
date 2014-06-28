@@ -22,6 +22,6 @@ class TimetablesController < ApplicationController
 
   private
   def timetable_params
-    params.require(:timetable).permit(:hour, :day, :room)
+    params.require(:timetable).permit(:hour, :day, :room, :course_title)
   end
 end

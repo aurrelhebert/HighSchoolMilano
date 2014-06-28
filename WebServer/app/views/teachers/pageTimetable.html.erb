@@ -5,7 +5,7 @@
     <li><%=link_to'Timetable' , pageTimetable_teacher_path(params[:id]) %></li>
     <li><%=link_to'CV' , cv_teacher_path(params[:id]) %></li>
     <li class="active"><%="Page related to "+@teacher.name %></li>
-    <li><%=link_to' Courses '+ @teacher.firstName + @teacher.name + ' is teaching','#' %></li>
+    <li><%=link_to' Courses '+ @teacher.firstName + @teacher.name + ' is teaching',courses_teacher_path(params[:id]) %></li>
     <li><%=link_to'Events Organized by '+@teacher.firstName + @teacher.name ,'#' %></li>
   </ul>
 </div>
@@ -15,5 +15,50 @@
     <h3 class="panel-title"><%='Timetable of ' +@teacher.firstName + @teacher.name %></h3>
   </div>
   <div class="panel-body">
+
+    <%= table_for(@list_timetable, :html => {:class => 'center'})  do |t| %>
+        <%= t.head do %>
+            <%= t.r do %>
+                <th class="titre">
+                  Day
+                </th>
+                <% (8..18).each do |i| %>
+                    <%= t.h(i) %>
+                <% end %>
+            <% end %>
+        <% end %>
+
+        <%= t.body do |timetable| %>
+            <%= t.r do %>
+                <% var= '';
+                   case timetable.day
+                     when 0
+                       var = 'Monday';
+                     when 1
+                       var = 'Tuesday';
+                     when 2
+                       var = 'Wednesday';
+                     when 3
+                       var = 'Thursday';
+                     when 4
+                       var = 'Friday';
+                   end
+                %>
+                <%= t.d(h(var)) %>
+
+                <% (8..18).each do |i| %>
+                    <% if i != timetable.hour %>
+                        <%= t.d('') %>
+                    <% else %>
+                        <td class="cour">
+                          <%= timetable.course_title %>
+                          Room: <%= timetable.room %>
+                        </td>
+                    <% end %>
+                <% end %>
+            <% end %>
+        <% end %>
+    <% end %>
+
   </div>
 </div>

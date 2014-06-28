@@ -5,7 +5,7 @@
     <li><%=link_to'Timetable' , pageTimetable_teacher_path(params[:id]) %></li>
     <li><%=link_to'CV' , cv_teacher_path(params[:id]) %></li>
     <li class="active"><%="Page related to "+@teacher.name %></li>
-    <li><%=link_to' Courses '+ @teacher.firstName + @teacher.name + ' is teaching','#' %></li>
+    <li><%=link_to' Courses '+ @teacher.firstName + @teacher.name + ' is teaching',courses_teacher_path(params[:id]) %></li>
     <li><%=link_to'Events Organized by '+@teacher.firstName + @teacher.name ,'#' %></li>
   </ul>
 </div>
