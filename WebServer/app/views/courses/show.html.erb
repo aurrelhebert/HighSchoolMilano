@@ -50,16 +50,20 @@
     <%end %>
 
     <% if @course.formation %>
+
       <div>
       <img src="/images/arrow_left.png" alt="Left arrow" width="52">
-    <%= link_to 'Previous course of the formation: ' + @course.formation.name, @course.prev %>
-        <div class="right">
-    <%= link_to '  Next course of the formation: '  + @course.formation.name, @course.next %>
-        <img src="/images/arrow_right.png" alt="Left arrow" width="52">
-        </div>
+      <%= link_to 'Previous course of the formation: ' + @course.formation.name, @course.prev %>
 
+        <div class="right">
+          <%= link_to '  Next course of the formation: '  + @course.formation.name, @course.next %>
+          <img src="/images/arrow_right.png" alt="Left arrow" width="52">
+        </div>
       </div>
+
+    <%= link_to 'Back to formation: '  + @course.formation.name, @course.formation %> |
     <% end %>
+
     <%= link_to 'Edit this page (only for teachers)', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
   </div>
