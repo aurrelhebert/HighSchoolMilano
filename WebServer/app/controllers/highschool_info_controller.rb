@@ -1,0 +1,2 @@
+class HighschoolInfoController < ApplicationController
+end

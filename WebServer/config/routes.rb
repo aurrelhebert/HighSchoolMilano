@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   end
 
   get 'welcome/index'
+  get 'highschool_info/aboutUs'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
