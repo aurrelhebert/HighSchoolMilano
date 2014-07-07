@@ -17,7 +17,7 @@
       <div class="panel-body">
         <% @formation.courses.each do |course| %>
             <p>
-              <%= link_to course.title,course %>
+              <%= link_to course.title, course %>
               <strong> : </strong>
               <%= course.desc %>
             </p>

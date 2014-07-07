@@ -8,4 +8,13 @@ class Course < ActiveRecord::Base
   validates :title, presence: true
   mount_uploader :avatar, Avatar_Uploader
   accepts_nested_attributes_for :courses_teachers, :allow_destroy => true
+
+  def next
+    formation.courses.where("id > ?", id).order("id ASC").first
+  end
+
+  def prev
+    formation.courses.where("id < ?", id).order("id DESC").first
+  end
+
 end

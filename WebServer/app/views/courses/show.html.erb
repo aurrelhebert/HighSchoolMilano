@@ -51,7 +51,8 @@
 
   </div>
 
-
+    <%= link_to 'Previous course of the same formation', @course.prev %>
+    <%= link_to 'Next course of the same formation', @course.next %>
     <%= link_to 'Book', pageBook_course_path(params[:id]) %>
     <%= link_to 'Edit this page (only for teachers)', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

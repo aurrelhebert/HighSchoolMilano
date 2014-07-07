@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628200318) do
+ActiveRecord::Schema.define(version: 20140624172025) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20140628200318) do
     t.integer  "finishHour"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "day"
     t.integer  "year"
     t.integer  "formation_id"
+    t.integer  "day"
     t.text     "program"
     t.string   "avatar"
   end
@@ -70,13 +70,6 @@ ActiveRecord::Schema.define(version: 20140628200318) do
     t.string   "cv"
   end
 
-  create_table "teaching_materials", force: true do |t|
-    t.string   "title"
-    t.text     "desc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "timetables", force: true do |t|
     t.integer  "hour"
     t.integer  "day"
@@ -84,7 +77,6 @@ ActiveRecord::Schema.define(version: 20140628200318) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "room"
-    t.string   "course_title"
   end
 
   add_index "timetables", ["course_id"], name: "index_timetables_on_course_id"
