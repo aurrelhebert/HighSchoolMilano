@@ -45,10 +45,12 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @titre = "Creating a course"
-    @formation = Formation.find(params[:formation_id])
-    @course = @formation.courses.create(course_params)
-    @course = Course.new(course_params)
-
+    if params[:formation_id]
+      @formation = Formation.find(params[:formation_id])
+      @course = @formation.courses.create(course_params)
+    else
+      @course = Course.new(course_params)
+    end
       if @course.save
         redirect_to edit_course_path(@course)
       else
@@ -85,11 +87,13 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     @list = params[:act_checkbox]
     @course.teachers.clear
-    @list.each do |_id,v|
-       if v == "1"
-         @teacher = Teacher.find(_id)
-         @course.teachers<<@teacher
-       end
+    if @list
+      @list.each do |_id,v|
+         if v == "1"
+           @teacher = Teacher.find(_id)
+           @course.teachers<<@teacher
+         end
+      end
     end
     redirect_to course_path(@course)
   end

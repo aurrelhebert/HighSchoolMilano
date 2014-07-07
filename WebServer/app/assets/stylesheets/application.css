@@ -78,3 +78,9 @@ IMG.avatar {
     max-height: 300px;
 }
 
+.right {
+    text-align: right;
+    float: right;
+}
+
+
