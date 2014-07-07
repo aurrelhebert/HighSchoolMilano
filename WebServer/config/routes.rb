@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   resources :courses do
     resources :books
     resources :timetables
+    resources :teachers
     member do
       get 'pageBook'
       get 'pageTimetable'
       get 'program'
       get 'display'
+      get 'teachers'
     end
   end
   resources :formations do
