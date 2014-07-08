@@ -18,6 +18,7 @@ class FormationsController < ApplicationController
 
   # GET /formations/new
   def new
+    @titre = 'New formation'
     @formation = Formation.new
   end
 

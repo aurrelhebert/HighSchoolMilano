@@ -31,6 +31,11 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
+    <strong>Avatar of the teacher:</strong><br>
+  <div class="field col-lg-offset-5">
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

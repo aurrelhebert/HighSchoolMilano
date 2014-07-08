@@ -49,20 +49,19 @@
         </p>
     <%end %>
 
-    <% if @tour!=nil %>
-          <div>
-                <% if @course.prev!=nil %>
-                <img src="/images/arrow_left.png" alt="Left arrow" width="52">
-                    <%= link_to 'Previous course of the formation: ' + @course.formation.name, course_path(@course.prev,:tour => @tour) %>
-                <% end %>
+    <% if @course.formation %>
 
-                <% if @course.next!=nil %>
-                    <div class="right">
-                      <%= link_to '  Next course of the formation: '  + @course.formation.name, course_path(@course.next,:tour => @tour) %>
-                      <img src="/images/arrow_right.png" alt="Left arrow" width="52">
-                    </div>
-                <% end %>
-          </div>
+      <div>
+      <img src="/images/arrow_left.png" alt="Left arrow" width="52">
+      <%= link_to 'Previous course of the formation: ' + @course.formation.name, @course.prev %>
+
+        <div class="right">
+          <%= link_to '  Next course of the formation: '  + @course.formation.name, @course.next %>
+          <img src="/images/arrow_right.png" alt="Left arrow" width="52">
+        </div>
+      </div>
+
+    <%= link_to 'Back to formation: '  + @course.formation.name, @course.formation %> |
     <% end %>
     <% if @comeFromForm!=nil %>
         <%= link_to 'Back to formation: '  + @course.formation.name, @course.formation %> |
