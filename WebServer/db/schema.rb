@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624172025) do
+ActiveRecord::Schema.define(version: 20140708110607) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20140624172025) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "room"
+    t.string   "course_title"
   end
 
   add_index "timetables", ["course_id"], name: "index_timetables_on_course_id"
