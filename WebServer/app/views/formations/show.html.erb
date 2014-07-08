@@ -5,7 +5,7 @@
         <h3 class="panel-title">Guided tour</h3>
       </div>
       <div class="panel-body">
-       <p> <%=link_to 'Start a tour of all the courses of the '+@formation.name+ ' formation', @formation.courses.first %></p>
+        <p> <%=link_to 'Start a tour of all the courses of the '+@formation.name+ ' formation', course_path(@formation.courses.first, :tour => @formation.name) %></p>
       </div>
     </div>
 </div>
@@ -17,7 +17,7 @@
       <div class="panel-body">
         <% @formation.courses.each do |course| %>
             <p>
-              <%= link_to course.title, course %>
+              <%= link_to course.title, course_path(course, :comeFromForm => @formation.name) %>
               <strong> : </strong>
               <%= course.desc %>
             </p>

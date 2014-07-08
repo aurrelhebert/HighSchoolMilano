@@ -12,6 +12,8 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @tour = params[:tour]
+    @comeFromForm = params[:comeFromForm]
     @titre = @course.title
       if @course.year != nil
         @titre += '('+@course.year+')'

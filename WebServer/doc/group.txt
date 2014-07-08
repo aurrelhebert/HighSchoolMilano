@@ -1,0 +1,3 @@
+M824382, Biez, Guillaume, guillaume.biez@mail.polimi.it
+M824422, El Alami, Sami, sami.elalami@mail.polimi.it
+M824120, Hebert, Aurelien, aurelien.hebert@mail.polimi.it
