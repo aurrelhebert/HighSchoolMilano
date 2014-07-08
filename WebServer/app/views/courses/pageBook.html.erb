@@ -19,21 +19,36 @@
   </div>
     <div class="panel-body">
     </div>
-<%foo=1%>
+<% if @course.books %>
+      <h3>Lits of books used in this class: </h3>
+      <ul>
 <% @course.books.each do |book| %>
-    <p> <h3>Book <%=foo%> </h3></p>
-    <p>
-      <strong>Title:</strong>
-      <%= book.title %>
-    </p>
 
-    <p>
-      <strong>Desc:</strong>
+    <li>
+      <% if !(book.author.blank?) %>
+        <%= book.author + ', '  %>,
+          ,
+      <% end %>
+      <% if !(book.title.blank?) %>
+        <%= book.title + ', ' %>
+      <% end %>
+      <% if !(book.town.blank?) %>
+      <%= book.town + ', ' %>
+      ,
+      <% end %>
+      <% if !(book.collection.blank?) %>
+      <%= book.collection + ', '  %>
+      ,
+      <% end %>
+      <% if !(book.year.blank?) %>
+      <%= book.year %>
+          :
+      <% end %>
       <%= book.desc %>
-    </p>
-
-    <%foo+=1%>
+    </li>
 <% end %>
+      </ul>
+      <%end%>
 
 
 <%= link_to 'Show', @course %> |
