@@ -6,7 +6,9 @@
 <h3> Courses:</h3>
 <% @teacher.courses.each do |course| %>
     <p>
-      <%= link_to course.title,course %>
+      <% if course.formation %>
+          <%= link_to course.title + ' (' + course.formation.name + ') ',course %>
+      <% end %>
     </p>
 <%end %>
     <%= link_to "Back",@teacher%>
