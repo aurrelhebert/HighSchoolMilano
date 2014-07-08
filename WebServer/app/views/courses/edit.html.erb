@@ -93,8 +93,28 @@
         <%= f.text_field :title %>
       </li>
       <li>
+        <%= f.label :author %><br>
+        <%= f.text_field :author %>
+      </li>
+      <li>
+         <%= f.label :town %><br>
+         <%= f.text_field :town %>
+      </li>
+      <li>
+         <%= f.label :editor %><br>
+         <%= f.text_field :editor %>
+      </li>
+      <li>
+         <%= f.label :collection %><br>
+         <%= f.text_field :collection %>
+      </li>
+      <li>
         <strong>Description:</strong><br>
         <%= f.text_area :desc %>
+      </li>
+      <li>
+        <%= f.label :year %><br>
+        <%= f.number_field :year%>
       </li>
       <li>
         <%= f.submit %>
