@@ -6,9 +6,9 @@
     <li><%=link_to'Books' ,pageBook_course_path(params[:id]) %></li>
     <li><%=link_to'Programs' , program_course_path(params[:id]) %></li>
     <li class="active"><%="Page related to "+@course.title %></li>
-    <li><%= link_to'Teacher teaching ' ,pageTeacher_course_path(params[:id]) %></li>
+    <li><%= link_to @course.title + '\'s teacher(s)' ,pageTeacher_course_path(params[:id]) %></li>
     <li><%=link_to'Teaching material used in '+@course.title ,'#' %></li>
-    <li><%=link_to'Formation containing ' +@course.title ,@course.formation %></li>
+    <li><%=link_to'Formation containing ' + @course.title ,@course.formation %></li>
     <li><%=link_to'Test and exam' ,'#' %></li>
   </ul>
 </div>
