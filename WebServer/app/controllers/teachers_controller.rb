@@ -17,6 +17,7 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
+    @titre = 'New teacher'
   end
 
   # GET /teachers/1/edit

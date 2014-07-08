@@ -20,6 +20,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/new
   def new
+    @titre = "New course"
     @course = Course.new
     @course.teachers.build()
   end
@@ -35,6 +36,10 @@ class CoursesController < ApplicationController
   # GET /courses/1/pbook
   def pageBook
     @course = Course.find(params[:id])
+    @titre = @course.title
+    if @course.year != nil
+      @titre += '('+@course.year+')'
+    end
   end
   # GET /courses/1/pageTeacher
   def pageTeacher
@@ -43,6 +48,10 @@ class CoursesController < ApplicationController
   end
   def pageTimetable
     @course = Course.find(params[:id])
+    @titre = @course.title
+    if @course.year != nil
+      @titre += '('+@course.year+')'
+    end
     @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}
   end
   # GET /courses/1/timetable

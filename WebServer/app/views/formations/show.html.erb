@@ -25,6 +25,7 @@
       </div>
     </div>
 </div>
+<div class = "center">
 <h2>Add a course:</h2>
 <%= form_for([@formation, @formation.courses.build]) do |f| %>
     <p>
@@ -39,5 +40,6 @@
       <%= f.submit %>
     </p>
 <% end %>
+</div>
 <%= link_to 'Edit', edit_formation_path(@formation) %> |
 <%= link_to 'Back', formations_path %>
