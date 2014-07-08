@@ -21,6 +21,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1/edit
   def edit
+    @titre = 'Edit '+@teacher.firstName+ ' ' +@teacher.name+"'s page"
     @list_courses = Course.all
   end
 

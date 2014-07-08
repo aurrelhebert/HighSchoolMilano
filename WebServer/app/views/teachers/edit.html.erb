@@ -1,39 +1,37 @@
-<h1>Editing teacher</h1>
 
+<div class="center">
+    <span class="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Upload a cv <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <%= form_for @teacher, :html => {:multipart => true} do |f| %>
+          <li>
+            <label>My CV</label>
+            <%= f.file_field :cv %>
+            <%= f.hidden_field :cv_cache %>
+          </li>
+
+          <li>
+            <%= f.submit(:cv) %>
+          </li>
+      <% end %>
+    </ul></span>
+  <form action="display" method="get">
+    <span class="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Add/remove courses<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+    <% @list_courses.each do |course| %>
+        <div>
+          <%= check_box(:act_checkbox, course.id, {checked:  @teacher.courses.exists?(course)}) %>
+          <%= course.title %>
+        </div>
+    <%end%>
+    <input type="submit" value="Submit">
+  </form>
+  </ul>
 <%= render 'form' %>
 
-<%= form_for @teacher, :html => {:multipart => true} do |f| %>
-    <p>
-      <label>My Avatar</label>
-      <%= f.file_field :avatar %>
-      <%= f.hidden_field :avatar_cache %>
-    </p>
 
-    <p>
-      <%= f.submit(:avatar) %>
-    </p>
-<% end %>
 
-<%= form_for @teacher, :html => {:multipart => true} do |f| %>
-    <p>
-      <label>My CV</label>
-      <%= f.file_field :cv %>
-      <%= f.hidden_field :cv_cache %>
-    </p>
-
-    <p>
-      <%= f.submit(:cv) %>
-    </p>
-<% end %>
-
-<form action="display" method="get">
-  <% @list_courses.each do |course| %>
-      <div>
-        <%= check_box(:act_checkbox, course.id, {checked:  @teacher.courses.exists?(course)}) %>
-        <%= course.title %>
-      </div>
-  <%end%>
-  <input type="submit" value="Submit">
-</form>
 <%= link_to 'Show', @teacher %> |
 <%= link_to 'Back', teachers_path %>
+</div>

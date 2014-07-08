@@ -39,6 +39,7 @@ class CoursesController < ApplicationController
   # GET /courses/1/pageTeacher
   def pageTeacher
     @course = Course.find(params[:id])
+    @titre = 'The course '+ @course.title + ' is taught by :'
   end
   def pageTimetable
     @course = Course.find(params[:id])

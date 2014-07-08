@@ -1,14 +1,32 @@
-<div class="panel panel-info col-lg-7">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= 'The course '+ @course.title + ' is teached by:' %></h3>
+<table class = "col-lg-offset-1">
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Name</th>
+    <th>Desk</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @course.teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.firstName %></td>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.desk %></td>
+        <td><%= teacher.phone %></td>
+        <td><%= teacher.email %></td>
+        <td><%= link_to 'Show', teacher %></td>
+        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<div class = "center">
+  <button type="button" class="btn btn-default">
+<%= link_to "Back",@course%>
+    </button>
   </div>
-  <div class="panel-body">
-    <h3> Courses:</h3>
-    <% @course.teachers.each do |teacher| %>
-        <p>
-          <%= link_to teacher.firstName+' '+teacher.name,teacher %>
-        </p>
-    <%end %>
-    <%= link_to "Back",@course%>
-  </div>
-</div>
