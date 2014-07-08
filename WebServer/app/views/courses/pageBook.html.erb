@@ -39,7 +39,7 @@
       <%= book.collection + ', '  %>
       <% end %>
       <% if !(book.year.blank?) %>
-      <%= book.year + ': '%>
+      <%= book.year.to_s + ': ' %>
       <% end %>
         </strong>
       <%= book.desc %>
