@@ -3,14 +3,14 @@
     <h3 class="panel-title"><%='Courses '+ @teacher.firstName + @teacher.name + ' is teaching' %></h3>
   </div>
   <div class="panel-body">
-<h3> Courses:</h3>
-<% @teacher.courses.each do |course| %>
-    <p>
-      <% if course.formation %>
-          <%= link_to course.title + ' (' + course.formation.name + ') ',course %>
-      <% end %>
-    </p>
-<%end %>
+    <h3> Courses:</h3>
+    <% @teacher.courses.each do |course| %>
+        <p>
+          <% if course.formation %>
+              <%= link_to course.title + ' (' + course.formation.name + ') ',course %>
+          <% end %>
+        </p>
+    <%end %>
     <%= link_to "Back",@teacher%>
   </div>
 </div>

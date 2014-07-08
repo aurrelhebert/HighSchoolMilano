@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       get 'pageTimetable'
       get 'program'
       get 'display'
-      get 'teachers'
+      get 'pageTeacher'
     end
   end
   resources :formations do

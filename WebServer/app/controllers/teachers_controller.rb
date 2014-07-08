@@ -5,12 +5,13 @@ class TeachersController < ApplicationController
   # GET /teachers.json
   def index
         @teachers = Teacher.all
+        @titre = "All teachers"
   end
 
   # GET /teachers/1
   # GET /teachers/1.json
   def show
-    @titre = Teacher.name
+    @titre = @teacher.firstName+ ' ' +@teacher.name
   end
 
   # GET /teachers/new
@@ -66,6 +67,7 @@ class TeachersController < ApplicationController
     end
 
   def courses
+    @Titre = Teacher.name
     @teacher = Teacher.find(params[:id])
   end
 

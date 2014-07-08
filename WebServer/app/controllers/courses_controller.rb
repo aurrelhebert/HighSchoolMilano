@@ -36,7 +36,10 @@ class CoursesController < ApplicationController
   def pageBook
     @course = Course.find(params[:id])
   end
-
+  # GET /courses/1/pageTeacher
+  def pageTeacher
+    @course = Course.find(params[:id])
+  end
   def pageTimetable
     @course = Course.find(params[:id])
     @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}
