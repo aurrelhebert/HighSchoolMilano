@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails WebServer: development" uuid="f20e1c30-057b-4f7b-ac4a-5ff8ea47244a">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Sami\Documents\GitHub\HighSchoolMilano\WebServer\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\aurelien\RubymineProjects\ProjectFin\HighSchoolMilano\WebServer\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails WebServer: test" uuid="3fdbbfe5-d369-4480-820b-bd3f60fa2762">
