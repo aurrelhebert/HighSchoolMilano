@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09f27208-04a7-4f9f-83be-4cf31371ebcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20140708122426_book.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WebServer.iml" afterPath="$PROJECT_DIR$/.idea/WebServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/books_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/books_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/edit.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/courses/pageBook.html.erb" afterPath="$PROJECT_DIR$/app/views/courses/pageBook.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebServer.iws" />
@@ -72,8 +67,8 @@
       <file leaf-file-name="pageBook.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/courses/pageBook.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9969879" vertical-offset="0" max-vertical-offset="1071">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.8704819" vertical-offset="459" max-vertical-offset="1054">
+              <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -702,7 +697,11 @@
       <created>1404821220616</created>
       <updated>1404821220616</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Correct book pages in class">
+      <created>1404823782255</created>
+      <updated>1404823782255</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -772,7 +771,8 @@
     <MESSAGE value="Add page about us + modif of welcome page" />
     <MESSAGE value="DB Ok. Correction default in teacher's timetable" />
     <MESSAGE value="Correction of little default" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction of little default" />
+    <MESSAGE value="Correct book pages in class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct book pages in class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1160,8 +1160,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/courses/pageBook.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9969879" vertical-offset="0" max-vertical-offset="1071">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.8704819" vertical-offset="459" max-vertical-offset="1054">
+          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
           <folding />
         </state>
       </provider>

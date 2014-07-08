@@ -26,24 +26,23 @@
 
     <li>
       <% if !(book.author.blank?) %>
-        <%= book.author + ', '  %>,
-          ,
+          <strong>
+        <%= book.author + ', '  %>
       <% end %>
       <% if !(book.title.blank?) %>
         <%= book.title + ', ' %>
       <% end %>
       <% if !(book.town.blank?) %>
       <%= book.town + ', ' %>
-      ,
       <% end %>
       <% if !(book.collection.blank?) %>
       <%= book.collection + ', '  %>
-      ,
       <% end %>
       <% if !(book.year.blank?) %>
       <%= book.year %>
           :
       <% end %>
+        </strong>
       <%= book.desc %>
     </li>
 <% end %>
