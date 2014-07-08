@@ -1,0 +1,28 @@
+<!-- <%= @titre ="About us"%> -->
+<!-- <%= @description ="Here you can find the history and traditions, the principles and the sucess data that are makes our high-school"%> -->
+
+<div class="col-lg-2">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active">About us</li>
+    <li><%=link_to'History and traditions' ,highschool_info_aboutUs_path %></li>
+    <li><%=link_to'The mission and educational principles' ,highschool_info_theMission_path %></li>
+  </ul>
+</div>
+
+<div class="panel panel-info col-lg-7">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%='Success Data'%></h3>
+  </div>
+  <div class="panel-body">
+    <h3>Success Data</h3>
+    Historically, we have the bests results of the region for the final exam since 1999.
+    Here are samples of success rate in year 2013 :
+    <ul>
+      <li>Science : 97%</li>
+      <li>Litterature : 96%</li>
+      <li>Economics : 97%</li>
+    </ul>
+
+    For the record, 40% of the graduated students 5 years ago in Science degree are now engineers.
+  </div>
+</div>

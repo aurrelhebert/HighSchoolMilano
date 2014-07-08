@@ -1,9 +1,25 @@
-<body>
-<div class="container-fluid">
-  <div class="panel panel-info">
-    <div class="panel-heading">About us:</div>
-    <div class="panel-body center ">
-      About us
-    </div>
+<!-- <%= @titre ="About us"%> -->
+<!-- <%= @description ="Here you can find the history and traditions, the principles and the sucess data that are makes our high-school"%> -->
+<div class="col-lg-2">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="active">About us</li>
+    <li><%=link_to'The mission and educational principles' ,highschool_info_theMission_path %></li>
+    <li><%=link_to'Success Data' ,highschool_info_successData_path %></li>
+  </ul>
+</div>
+
+<div class="panel panel-info col-lg-7">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%='History and traditions'%></h3>
+  </div>
+  <div class="panel-body">
+    <h3>History and traditions</h3>
+    Traditions are the customs, rituals, stories and ways of thinking that those in earlier generations
+    hand down to us and we in turn hand down to future generations. Traditions are very important because
+    they help us understand life, who we are, where we fit in our community and world, and how the story of
+    our life fits in the larger stories of our community and world.
+    In our high-school , from it’s beginning (in 1812), our traditions and values are based on intellectual,
+    moral, physical and cultural development, enriched by students from diverse backgrounds.
+
   </div>
 </div>
