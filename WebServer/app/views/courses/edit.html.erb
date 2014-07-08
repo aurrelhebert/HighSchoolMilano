@@ -1,140 +1,134 @@
 
-<h1>Editing course</h1>
+<div class = 'col-lg-offset-3'>
+  <span class="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Edit the timetable<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+  <% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
+  <% @list.each do |timetable| %>
+        <li>
+          <strong>Day:</strong>
+          <% var= '';
+             case timetable.day
+               when 0
+                 var = 'Monday';
+               when 1
+                 var = 'Tuesday';
+               when 2
+                 var = 'Wednesday';
+               when 3
+                 var = 'Thursday';
+               when 4
+                 var = 'Friday';
+             end
+          %>
+          <%= var %>
+        </li>
 
+        <li>
+          <strong>Hour:</strong>
+          <%= timetable.hour %>
+        </li>
+
+        <li>
+          <strong>Room:</strong>
+          <%= timetable.room %>
+        </li>
+
+        <li>
+          <%= link_to 'Destroy Lesson', [timetable.course, timetable],
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+        </li>
+          <li class="divider"></li>
+  <% end %>
+
+
+  <%= form_for([@course, @course.timetables.build]) do |f| %>
+
+        <li>
+          <%= f.label :day%><br>
+          <%= f.select(:day, options_for_select([['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4]])) %>
+        </li>
+
+        <li>
+          <%= f.label :hour %><br>
+          <%= f.number_field :hour, :min => 8, :max => 17, :value => 8%>
+        </li>
+
+        <li>
+          <%= f.label :room %><br>
+          <%= f.text_field :room %>
+        </li>
+        <li>
+          <%= f.submit %>
+        </li>
+
+  <% end %>
+    </ul>
+    </span>
+  <span class="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Edit the books<span class="caret"></span></button>
+  <ul class="dropdown-menu">
+  <% @course.books.each do |book| %>
+      <li>
+        <strong>Title:</strong>
+        <%= book.title %>
+      </li>
+
+      <li>
+        <strong>Description:</strong>
+        <%= book.desc %>
+
+        <%= link_to 'Destroy Book', [book.course, book],
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+
+      </li>
+        <li class="divider"></li>
+  <% end %>
+
+  <%= form_for([@course, @course.books.build]) do |f| %>
+      <li>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </li>
+      <li>
+        <strong>Description:</strong><br>
+        <%= f.text_area :desc %>
+      </li>
+      <li>
+        <%= f.submit %>
+      </li>
+  <% end %>
+  </ul>
+</span>
+  <span class="dropdown">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Add/remove teachers<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+  <form action="display" method="get">
+    <% @list_teacher.each do |teacher| %>
+        <li>
+          <%= check_box(:act_checkbox, teacher.id, {checked:  @course.teachers.exists?(teacher)}) %>
+          <%= teacher.name %>
+          <%= teacher.firstName %>
+        </li>
+    <%end%>
+   <li> <input type="submit" value="Submit"></li>
+  </form>
+</ul>
+</span>
 <%= render 'form' %>
 
-<%= form_for @course, :html => {:multipart => true} do |f| %>
-    <p>
-      <label>My Avatar</label>
-      <%= f.file_field :avatar %>
-      <%= f.hidden_field :avatar_cache %>
-    </p>
+</div>
 
-    <p>
-      <%= f.submit(:avatar) %>
-    </p>
 
-<% end %>
 
-<h2><a title="Timetable" name="timetable"></a>Time and days of the lesson</h2>
 
-<% @list = @course.timetables.to_a.sort_by {|m| [m.day, m.hour]}%>
-<% @list.each do |timetable| %>
 
-    <p>
-      <strong>Day:</strong>
-      <% var= '';
-         case timetable.day
-           when 0
-             var = 'Monday';
-           when 1
-             var = 'Tuesday';
-           when 2
-             var = 'Wednesday';
-           when 3
-             var = 'Thursday';
-           when 4
-             var = 'Friday';
-         end
-      %>
-      <%= var %>
-    </p>
 
-    <p>
-      <strong>Hour:</strong>
-      <%= timetable.hour %>
-    </p>
-
-    <p>
-      <strong>Room:</strong>
-      <%= timetable.room %>
-    </p>
-
-    <p>
-    <%= link_to 'Destroy Lesson', [timetable.course, timetable],
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-    </p>
-
-<% end %>
-
-<h2>Add a Lesson:</h2>
-<%= form_for([@course, @course.timetables.build]) do |f| %>
-
-    <p>
-    <%= f.label :day%>
-    <%= f.select(:day, options_for_select([['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4]])) %>
-    </p>
-
-    <p>
-      <%= f.label :hour %><br>
-      <%= f.number_field :hour, :min => 8, :max => 17, :value => 8%>
-    </p>
-
-    <p>
-      <%= f.label :room %><br>
-      <%= f.text_field :room %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
-<p>
-<h2><a title="Books" name="book"></a>Books</h2>
-</p>
-<%foo=1%>
-<% @course.books.each do |book| %>
-    <h3>Book <%=foo%> </h3>
-    <p>
-      <strong>Title:</strong>
-      <%= book.title %>
-    </p>
-
-    <p>
-      <strong>Desc:</strong>
-      <%= book.desc %>
-
-      <%= link_to 'Destroy Book', [book.course, book],
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-
-    </p>
-
-    <%foo+=1%>
-<% end %>
-
-<h2>Add a Book:</h2>
-<%= form_for([@course, @course.books.build]) do |f| %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </p>
-    <p>
-      <%= f.label :desc %><br>
-      <%= f.text_area :desc %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
-<% end %>
-
-    <p>
-      Titre
-
-<form action="display" method="get">
-  <% @list_teacher.each do |teacher| %>
-      <div>
-        <%= check_box(:act_checkbox, teacher.id, {checked:  @course.teachers.exists?(teacher)}) %>
-        <%= teacher.name %>
-        <%= teacher.firstName %>
-      </div>
-  <%end%>
-  <input type="submit" value="Submit">
-</form>
-
-    </p>
 
 <%= link_to 'Show', @course %> |
 <%= link_to 'Back', courses_path %>
 
 
+</div>

@@ -23,6 +23,7 @@ class FormationsController < ApplicationController
 
   # GET /formations/1/edit
   def edit
+    @titre = 'Editing formation'
   end
 
   # POST /formations

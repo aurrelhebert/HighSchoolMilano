@@ -4,12 +4,13 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
+        @teachers = Teacher.all
   end
 
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    @titre = Teacher.name
   end
 
   # GET /teachers/new

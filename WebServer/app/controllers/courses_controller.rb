@@ -28,6 +28,7 @@ class CoursesController < ApplicationController
   def edit
     @titre = "Edit "+@course.title
     @teachers = @course.teachers
+    @timetables = @course.timetables
     @list_teacher = Teacher.all
   end
 
@@ -98,6 +99,7 @@ class CoursesController < ApplicationController
     redirect_to course_path(@course)
   end
 
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_course
@@ -106,6 +108,6 @@ class CoursesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def course_params
-    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day, :program, :avatar, :teachers)
+    params.require(:course).permit(:title, :desc, :startingHour, :finishHour, :day, :program, :avatar, :avatar_cache, :teachers)
   end
 end

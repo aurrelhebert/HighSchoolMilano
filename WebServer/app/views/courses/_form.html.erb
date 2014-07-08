@@ -17,23 +17,25 @@
     <%= f.text_field :title %>
   </p>
   <p class="field">
-    <%= f.label :desc %><br>
+    <label>Description</label><br>
     <%= f.text_area :desc %>
   </p>
-
-
-        Liste :
-        <% @list_t = []%>
-
-
-    <% @course.teachers.each do |teacher| %>
-        <p>
-        <%= teacher.name %>
-        <%= teacher.firstName %>
-        </p>
-   <%end %>
-
+  <p class ="field">
+  <label>Avatar of the course</label>
+  <%= f.file_field :avatar %>
+  <%= f.hidden_field :avatar_cache %>
   </p>
+  <p class="field">
+    <%= f.label :program %><br>
+    <%= f.text_area :program %>
+  </p>
+
+
+
+
+
+
+    </p>
   <p class="actions">
     <%= f.submit %>
   </p>
